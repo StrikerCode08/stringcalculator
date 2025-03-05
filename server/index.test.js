@@ -17,6 +17,9 @@ describe("StringCalculator", () => {
   test("handles an unknown amount of numbers", () => {
     expect(calculator.add("1,2,3,4,5")).toBe(15);
   });
+  test("handles spaces as delimiters", () => {
+    expect(calculator.add("1 2 3")).toBe(6);
+  });
   test("handles new lines as delimiters", () => {
     expect(calculator.add("1\n2,3")).toBe(6);
   });
