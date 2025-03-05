@@ -34,4 +34,7 @@ describe("StringCalculator", () => {
   test("ignores numbers greater than 1000", () => {
     expect(calculator.add("2,1001,3")).toBe(5);
   });
+  test("handles escaped newlines '\\n' as valid delimiters", () => {
+    expect(calculator.add("1\\n2")).toBe(3);
+  });
 });

@@ -5,6 +5,7 @@ class StringCalculator {
   add(numberString) {
     if (!numberString.trim()) return 0;
     let delimiters = [...this.defaultDelimiters];
+    numberString = numberString.replace(/\\n/g, "\n");
     if (numberString.startsWith("//")) {
       const parts = numberString.split("\n");
       delimiters = [parts[0].slice(2)];
